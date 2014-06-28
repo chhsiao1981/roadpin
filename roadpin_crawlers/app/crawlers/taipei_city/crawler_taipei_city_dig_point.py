@@ -100,13 +100,13 @@ def _iter_crawl_dig_point_core(next_dig_point, offset_dig_point):
     dig_points = range(start_dig_point, end_dig_point)
 
     (error_code, http_results) = _get_http_results(dig_points)
-    cfg.logger.debug('error_code: %s http_results: %s', error_code, http_results)
+    #cfg.logger.debug('error_code: %s http_results: %s', error_code, http_results)
 
     if error_code != S_OK:
         return (error_code, next_dig_point, offset_dig_point, {})
     
     (error_code, latest_dig_point, results) = _process_http_results(dig_points, http_results)
-    cfg.logger.debug('error_code: %s next_dig_point: %s latest_dig_point: %s results: %s', error_code, next_dig_point, latest_dig_point, results)
+    #cfg.logger.debug('error_code: %s next_dig_point: %s latest_dig_point: %s results: %s', error_code, next_dig_point, latest_dig_point, results)
 
     if error_code != S_OK:
         return (error_code, next_dig_point, offset_dig_point, {})
